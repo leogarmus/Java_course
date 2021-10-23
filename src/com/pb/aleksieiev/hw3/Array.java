@@ -10,6 +10,7 @@ public class Array {
         System.out.println("Введите 10 чисел");
         int[] arr = new int[10];
         int sum = 0;
+        int sumPos = 0;
         int temp;
 
       for (int i = 0; i < arr.length; i++) {
@@ -20,9 +21,13 @@ public class Array {
         for(int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
             sum += arr[i];
+            if (arr[i] > 0) {
+                sumPos += arr[i];
+            }
         }
 
         System.out.println("\nСумма всех элементов: " + sum);
+        System.out.println("Сумма всех положительных элементов: " + sumPos);
 
         System.out.println("Отсортированный массив: ");
         for (int i = arr.length - 1; i > 0; i--) {
