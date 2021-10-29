@@ -1,7 +1,7 @@
 package com.pb.aleksieiev.hw4;
 
+import javax.swing.*;
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Anagram {
@@ -12,7 +12,6 @@ public class Anagram {
         String userStringFirst = scan.nextLine();
         System.out.println("Введите вторую строку");
         String userStringSecond = scan.nextLine();
-
         if (compare(userStringFirst, userStringSecond)) {
             System.out.println("Строки являются анаграмой");
         } else {
@@ -21,17 +20,16 @@ public class Anagram {
     }
 
     static Boolean compare(String firstStr, String secondStr) {
-        String newSF = new String();
-        String newSS = new String();
-        newSF = firstStr.toLowerCase().replaceAll("[^аА-яЯ]", "");
-        newSS = secondStr.toLowerCase().replaceAll("[^аА-яЯ]", "");
-        String[] arStrF = newSF.split("");
-        String[] arStrS = newSS.split("");
-        Arrays.sort(arStrF);
-        Arrays.sort(arStrS);
-
-        Boolean result = Arrays.equals(arStrF, arStrS);
+        Boolean result = Arrays.equals(preCompare(firstStr), preCompare(secondStr));
         return result;
+    }
+
+    static String[] preCompare(String str) {
+        String newStr;
+        newStr = str.toLowerCase().replaceAll("[^аАaA-яЯzZ]", "");
+        String[] arStr = newStr.split("");
+        Arrays.sort(arStr);
+        return arStr;
     }
 
 }
