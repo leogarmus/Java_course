@@ -10,7 +10,7 @@ public class Reader {
 
     public Reader(String name, int ticketNumber, String faculty, String birthDate, String phoneNumber){
         this.name = name;
-        this. ticketNumber = ticketNumber;
+        this.ticketNumber = ticketNumber;
         this.faculty = faculty;
         this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
